@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- Tree View -->
+    <record id="birthday_empleado_birthday_tree" model="ir.ui.view">
+      <field name="name">birthday.empleado_birthday.tree</field>
+      <field name="model">birthday.empleado_birthday</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="birthday"/>
+          <field name="envio_mensage_birthday"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form View (opcional, recomendado para mayor usabilidad) -->
+    <record id="birthday_empleado_birthday_form" model="ir.ui.view">
+      <field name="name">birthday.empleado_birthday.form</field>
+      <field name="model">birthday.empleado_birthday</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="birthday"/>
+              <field name="envio_mensage_birthday"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_birthday_empleado_birthday" model="ir.actions.act_window">
+      <field name="name">Email Cumpleaños de Empleado</field>
+      <field name="res_model">birthday.empleado_birthday</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="birthday_empleado_birthday_tree"/> <!-- Opcional -->
+    </record>
+
+    <menuitem id="menu_birthday_root" name="Cumpleaños"/>
+	<menuitem id="menu_birthday_empleado_birthday" name="Email Cumpleaños de Empleado" parent="menu_birthday_root" action="action_birthday_empleado_birthday"/>
+  </data>
+</odoo>
