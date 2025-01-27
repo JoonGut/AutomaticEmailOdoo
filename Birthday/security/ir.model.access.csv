@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_birthday_empleado_birthday_user,birthday.empleado_birthday.user,model_birthday_empleado_birthday,base.group_user,1,1,1,1
